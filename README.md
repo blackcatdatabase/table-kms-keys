@@ -2,7 +2,7 @@
 
 ![SQL](https://img.shields.io/badge/SQL-MySQL%208.0%2B-4479A1?logo=mysql&logoColor=white) ![License](https://img.shields.io/badge/license-BlackCat%20Proprietary-red) ![Status](https://img.shields.io/badge/status-stable-informational) ![Generated](https://img.shields.io/badge/generated-from%20schema--map-blue)
 
-> Schema package for table **kms_keys** (repo: $slug).
+> Schema package for table **kms_keys** (repo: `kms-keys`).
 
 ## Files
 ```
@@ -40,9 +40,9 @@ mysql -h 127.0.0.1 -P 3307 -u root -proot app < schema/030_foreign_keys.sql
 | id | BIGINT UNSIGNED | — | — | AUTO_INCREMENT, PK |
 | provider_id | BIGINT UNSIGNED | NO | — |  |
 | external_key_ref | VARCHAR(512) | NO | — |  |
-| purpose | ENUM(''wrap'',''encrypt'',''both'') | NO | '' |  |
+| purpose | ENUM('wrap','encrypt','both') | NO | '' |  |
 | algorithm | VARCHAR(64) | YES | — |  |
-| status | ENUM(''active'',''retired'',''disabled'') | NO | '' |  |
+| status | ENUM('active','retired','disabled') | NO | '' |  |
 | created_at | DATETIME(6) | NO | CURRENT_TIMESTAMP(6) |  |
 
 ## Relationships
@@ -51,13 +51,13 @@ mysql -h 127.0.0.1 -P 3307 -u root -proot app < schema/030_foreign_keys.sql
 ```mermaid
 erDiagram
   KMS_KEYS {
-    BIGINT id PK
-    BIGINT provider_id
-    VARCHAR(512) external_key_ref
-    ENUM(''wrap'',''encrypt'',''both'') purpose
-    VARCHAR(64) algorithm
-    ENUM(''active'',''retired'',''disabled'') status
-    DATETIME(6) created_at
+    INT id PK
+    INT provider_id
+    VARCHAR external_key_ref
+    ENUM purpose
+    VARCHAR algorithm
+    ENUM status
+    DATETIME created_at
   }
   KMS_KEYS }o--|| KMS_PROVIDERS : "provider_id"
 ```

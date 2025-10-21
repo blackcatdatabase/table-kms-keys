@@ -59,7 +59,7 @@ erDiagram
     ENUM(''active'',''retired'',''disabled'') status
     DATETIME(6) created_at
   }
-  KMS_KEYS }o--|| KMS_PROVIDERS : (provider_id)
+  KMS_KEYS }o--|| KMS_PROVIDERS : "provider_id"
 ```
 
 ## Indexes

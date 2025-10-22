@@ -42,9 +42,9 @@ mysql -h 127.0.0.1 -P 3307 -u root -proot app < schema/030_foreign_keys.sql
 | id | BIGINT UNSIGNED | — | — | AUTO_INCREMENT, PK |
 | provider_id | BIGINT UNSIGNED | NO | — |  |
 | external_key_ref | VARCHAR(512) | NO | — |  |
-| purpose | ENUM('wrap','encrypt','both') | NO | '' |  |
+| purpose | ENUM('wrap','encrypt','both') | NO | 'wrap' |  |
 | algorithm | VARCHAR(64) | YES | — |  |
-| status | ENUM('active','retired','disabled') | NO | '' |  |
+| status | ENUM('active','retired','disabled') | NO | 'active' |  |
 | created_at | DATETIME(6) | NO | CURRENT_TIMESTAMP(6) |  |
 
 ## Relationships

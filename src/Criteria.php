@@ -6,7 +6,7 @@ namespace BlackCat\Database\Packages\KmsKeys;
 /**
  * Bezpečný builder WHERE/ORDER/LIMIT.
  * - whitelist filtrů: [ 'id', 'provider_id', 'external_key_ref', 'purpose', 'algorithm', 'status', 'created_at' ]
- * - whitelist pro LIKE hledání: [ 'external_key_ref', 'algorithm' ]
+ * - whitelist pro LIKE hledání: [ 'external_key_ref', 'purpose', 'algorithm', 'status' ]
  */
 final class Criteria {
     /** @var array<string,mixed> */
@@ -61,7 +61,7 @@ final class Criteria {
 
         // fulltext/LIKE (přes whitelist)
         if ($this->search !== null) {
-            $searchCols = [ 'external_key_ref', 'algorithm' ];
+            $searchCols = [ 'external_key_ref', 'purpose', 'algorithm', 'status' ];
             $likeParts = [];
             foreach ($searchCols as $i=>$c) {
                 if ($c === '') continue;

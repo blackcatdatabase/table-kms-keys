@@ -6,7 +6,7 @@ namespace BlackCat\Database\Packages\KmsKeys;
 final class Definitions {
     // --- základní metadata ---
     public static function table(): string { return 'kms_keys'; }
-    public static function contractView(): string { return 'v_kms_keys_contract'; }
+    public static function contractView(): string { return 'vw_kms_keys'; }
     /** @return string[] */
     public static function columns(): array { return [ 'id', 'provider_id', 'external_key_ref', 'purpose', 'algorithm', 'status', 'created_at' ]; }
     public static function pk(): string { return 'id'; }

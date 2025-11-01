@@ -1,4 +1,4 @@
--- Auto-generated from schema-map-postgres.psd1 (map@38d5403)
+-- Auto-generated from schema-map-postgres.psd1 (map@c5e4097)
 -- engine: postgres
 -- table:  kms_keys
 CREATE UNIQUE INDEX IF NOT EXISTS ux_kms_keys_provider_ref ON kms_keys (provider_id, external_key_ref);

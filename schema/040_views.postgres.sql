@@ -1,4 +1,4 @@
--- Auto-generated from schema-views-postgres.psd1 (map@9d3471b)
+-- Auto-generated from schema-views-postgres.psd1 (map@62c9c93)
 -- engine: postgres
 -- table:  kms_keys_status_by_provider
 -- KMS keys status per provider
@@ -15,7 +15,7 @@ JOIN kms_providers p ON p.id = k.provider_id
 GROUP BY p.provider, p.name
 ORDER BY p.provider, p.name;
 
--- Auto-generated from schema-views-postgres.psd1 (map@9d3471b)
+-- Auto-generated from schema-views-postgres.psd1 (map@62c9c93)
 -- engine: postgres
 -- table:  kms_keys
 -- Contract view for [kms_keys]

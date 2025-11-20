@@ -1,4 +1,4 @@
--- Auto-generated from schema-map-mysql.psd1 (map@db2f8b8)
+-- Auto-generated from schema-map-mysql.psd1 (map@62c9c93)
 -- engine: mysql
 -- table:  kms_keys
 CREATE TABLE IF NOT EXISTS kms_keys (
@@ -9,4 +9,4 @@ CREATE TABLE IF NOT EXISTS kms_keys (
   algorithm VARCHAR(64) NULL,
   status ENUM('active','retired','disabled') NOT NULL DEFAULT 'active',
   created_at DATETIME(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;

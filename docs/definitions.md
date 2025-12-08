@@ -6,12 +6,12 @@ External KMS key references. UNIQUE (provider_id, external_key_ref).
 | Column | Type | Null | Default | Description |
 | --- | --- | --- | --- | --- |
 | algorithm | VARCHAR(64) | YES |  | Algorithm or template id. |
-| created_at | TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | Creation timestamp (UTC). |
+| created_at | DATETIME(6) | NO | CURRENT_TIMESTAMP(6) | Creation timestamp (UTC). |
 | external_key_ref | VARCHAR(512) | NO |  | Provider-specific key identifier. Part of UNIQUE (provider_id, external_key_ref). |
 | id | BIGINT | NO |  | Surrogate primary key. |
 | provider_id | BIGINT | NO |  | KMS provider (FK kms_providers.id). |
-| purpose | TEXT | NO | wrap | Primary purpose. (enum: wrap, encrypt, both) |
-| status | TEXT | NO | active | Lifecycle status. (enum: active, retired, disabled) |
+| purpose | ENUM('wrap','encrypt','both') | NO | wrap | Primary purpose. (enum: wrap, encrypt, both) |
+| status | ENUM('active','retired','disabled') | NO | active | Lifecycle status. (enum: active, retired, disabled) |
 
 ## Engine Details
 
@@ -54,7 +54,7 @@ Foreign keys:
 ## Views
 | View | Engine | Flags | File |
 | --- | --- | --- | --- |
-| vw_kms_keys | mysql | algorithm=MERGE, security=INVOKER | [packages\kms-keys\schema\040_views.mysql.sql](https://github.com/blackcatacademy/blackcat-database/packages/kms-keys/schema/040_views.mysql.sql) |
-| vw_kms_keys_status_by_provider | mysql | algorithm=TEMPTABLE, security=INVOKER | [packages\kms-keys\schema\040_views_joins.mysql.sql](https://github.com/blackcatacademy/blackcat-database/packages/kms-keys/schema/040_views_joins.mysql.sql) |
-| vw_kms_keys | postgres |  | [packages\kms-keys\schema\040_views.postgres.sql](https://github.com/blackcatacademy/blackcat-database/packages/kms-keys/schema/040_views.postgres.sql) |
-| vw_kms_keys_status_by_provider | postgres |  | [packages\kms-keys\schema\040_views_joins.postgres.sql](https://github.com/blackcatacademy/blackcat-database/packages/kms-keys/schema/040_views_joins.postgres.sql) |
+| vw_kms_keys | mysql | algorithm=MERGE, security=INVOKER | [schema\040_views.mysql.sql](schema\040_views.mysql.sql) |
+| vw_kms_keys_status_by_provider | mysql | algorithm=TEMPTABLE, security=INVOKER | [schema\040_views_joins.mysql.sql](schema\040_views_joins.mysql.sql) |
+| vw_kms_keys | postgres |  | [schema\040_views.postgres.sql](schema\040_views.postgres.sql) |
+| vw_kms_keys_status_by_provider | postgres |  | [schema\040_views_joins.postgres.sql](schema\040_views_joins.postgres.sql) |

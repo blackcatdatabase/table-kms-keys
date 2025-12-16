@@ -41,11 +41,11 @@ final class Criteria extends BaseCriteria
         return [ 'external_key_ref', 'algorithm' ];
     }
 
-/** Columns allowed in ORDER BY (falls back to filterable() when empty). */
-protected function sortable(): array
-{
-    return [ 'id', 'provider_id', 'external_key_ref', 'purpose', 'algorithm', 'status', 'created_at' ];
-}
+    /** Columns allowed in ORDER BY (falls back to filterable() when empty). */
+    protected function sortable(): array
+    {
+        return [ 'id', 'provider_id', 'external_key_ref', 'purpose', 'algorithm', 'status', 'created_at' ];
+    }
 
     /**
      * Whitelist of joinable entities (for safe ->join() usage):

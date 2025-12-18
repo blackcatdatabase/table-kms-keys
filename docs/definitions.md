@@ -3,15 +3,15 @@
 External KMS key references. UNIQUE (provider_id, external_key_ref).
 
 ## Columns
-| Column | Type | Null | Default | Description |
-| --- | --- | --- | --- | --- |
-| id | BIGINT | NO |  | Surrogate primary key. |
-| provider_id | BIGINT | NO |  | KMS provider (FK kms_providers.id). |
-| external_key_ref | VARCHAR(512) | NO |  | Provider-specific key identifier. Part of UNIQUE (provider_id, external_key_ref). |
-| purpose | mysql: ENUM('wrap','encrypt','both') / postgres: TEXT | NO | wrap | Primary purpose. (enum: wrap, encrypt, both) |
-| algorithm | VARCHAR(64) | YES |  | Algorithm or template id. |
-| status | mysql: ENUM('active','retired','disabled') / postgres: TEXT | NO | active | Lifecycle status. (enum: active, retired, disabled) |
-| created_at | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | Creation timestamp (UTC). |
+| Column | Type | Null | Default | Description | Crypto |
+| --- | --- | --- | --- | --- | --- |
+| id | BIGINT | NO |  | Surrogate primary key. |  |
+| provider_id | BIGINT | NO |  | KMS provider (FK kms_providers.id). |  |
+| external_key_ref | VARCHAR(512) | NO |  | Provider-specific key identifier. Part of UNIQUE (provider_id, external_key_ref). |  |
+| purpose | mysql: ENUM('wrap','encrypt','both') / postgres: TEXT | NO | wrap | Primary purpose. (enum: wrap, encrypt, both) |  |
+| algorithm | VARCHAR(64) | YES |  | Algorithm or template id. |  |
+| status | mysql: ENUM('active','retired','disabled') / postgres: TEXT | NO | active | Lifecycle status. (enum: active, retired, disabled) |  |
+| created_at | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | Creation timestamp (UTC). |  |
 
 ## Engine Details
 

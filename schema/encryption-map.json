@@ -1,0 +1,29 @@
+{
+  "tables": {
+    "kms_keys": {
+      "columns": {
+        "algorithm": {
+          "strategy": "passthrough"
+        },
+        "created_at": {
+          "strategy": "passthrough"
+        },
+        "external_key_ref": {
+          "strategy": "passthrough"
+        },
+        "id": {
+          "strategy": "passthrough"
+        },
+        "provider_id": {
+          "strategy": "passthrough"
+        },
+        "purpose": {
+          "strategy": "passthrough"
+        },
+        "status": {
+          "strategy": "passthrough"
+        }
+      }
+    }
+  }
+}
